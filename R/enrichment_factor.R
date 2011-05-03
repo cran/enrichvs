@@ -8,10 +8,14 @@
 # > enrichment_factor(x, y, top=0.05)
 
 enrichment_factor <- function(x, y, top=0.05, decreasing=TRUE) {
+  if ( length(x) != length(y) ){
+    stop(paste("The number of scores must be equal to the number of labels."))
+  }
+  N <- length(y)
   ord <- order(x, decreasing=decreasing)
-  at <- round(length(y) * top, 0)
+  at <- round(N * top, 0)
   lig_sampled <- ( cumsum(y[ord]) / sum(y) )[at]
-  n_sampled <- (1:length(y) / length(y) )[at]
+  n_sampled <- (1:length(y) / N )[at]
 
-  return (lig_sampled / n_sampled) / ( sum(y) / length(y) )
+  return (lig_sampled / n_sampled) / ( sum(y) / N )
 }

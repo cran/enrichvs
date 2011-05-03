@@ -8,9 +8,10 @@
 # > plot_enrichment_curve(x, y)
 
 plot_enrichment_curve <- function(x, y, decreasing=TRUE, nplot=100, 
-      colbarwidth=1, colorize=FALSE, add=FALSE, col="brack") {
-
-  col=rev( rainbow(nplot,start=0, end=2/3) )
+      colbarwidth=1, colorize=FALSE, add=FALSE, col="black") {
+  if ( length(x) != length(y) ){
+    stop(paste("The number of scores must be equal to the number of labels."))
+  }
 
   ord <- order(x, decreasing=decreasing)
   at <- c(1, round(1:nplot * length(y) / nplot, 0) )
@@ -31,9 +32,11 @@ plot_enrichment_curve <- function(x, y, decreasing=TRUE, nplot=100,
       lines(c(0,100), c(0,100), lwd=2, lty=3, col="grey")
     }
     plot.xy( xy.coords(100 * n_sampled, 100 * lig_sampled), col=col, type="l", lwd=3)
-    return(TRUE)
+    return()
   }
-  
+
+  col=rev( rainbow(nplot,start=0, end=2/3) )
+
   if( add == FALSE ){
     plot( y, y, xlim=c(0, 100), ylim=c(0,100), type="n", las=1,
       xlab="top % of ranked database", ylab="% found Activities (yield)"
@@ -59,6 +62,5 @@ plot_enrichment_curve <- function(x, y, decreasing=TRUE, nplot=100,
     color.n <- col[ round( nplot * (x[ord][at][n] - min(x)) / ( max(x) - min(x) ), 0) ]
     plot.xy( xy.coords(100 * n_sampled[c(n, n+1)], 100 * lig_sampled[c(n, n+1)]), type="l", lwd=3, col=color.n)
   }
-  return(TRUE)
 }
 

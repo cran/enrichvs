@@ -1,14 +1,14 @@
-\name{plot_enrichment_curve}
-\alias{plot_enrichment_curve}
+\name{plot_enrichment_curve_xlog}
+\alias{plot_enrichment_curve_xlog}
 
 \title{
-	Function to plot a enrichment curve for virtual screening
+	Function to plot a enrichment curve with a logarithmic scale on the x axis
 }
 \description{
-	Function to plot a enrichment curve for virtual screening
+	Function to plot a enrichment curve with a logarithmic scale on the x axis
 }
 \usage{
-	plot_enrichment_curve(x, y, decreasing=TRUE, nplot=100, 
+	plot_enrichment_curve_xlog(x, y, decreasing=TRUE, nplot=100, 
 		colbarwidth=1, colorize=FALSE, add=FALSE, col="black")
 }
 
@@ -60,9 +60,9 @@
 \examples{
 x <- rnorm(1000)    # random scores for 1000 compounds
 y <- c(rep(1,50), rep(0,950))     # activity labels for "x"
-plot_enrichment_curve(x, y)
+plot_enrichment_curve_xlog(x, y)
 
 data(dud_egfr)
-plot_enrichment_curve(dud_egfr$energy, dud_egfr$label, 
+plot_enrichment_curve_xlog(dud_egfr$energy, dud_egfr$label, 
 	add=TRUE, decreasing=FALSE, col="red")
 }

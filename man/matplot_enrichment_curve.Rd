@@ -2,10 +2,10 @@
 \alias{matplot_enrichment_curve}
 
 \title{
-	Plot multiple enrichment curves for virtual screening
+	Function to plot multiple enrichment curves for virtual screening
 }
 \description{
-	Plot multiple enrichment curves for virtual screening
+	Function to plot multiple enrichment curves for virtual screening
 }
 \usage{
 	matplot_enrichment_curve(x, y)
@@ -13,7 +13,7 @@
 
 \arguments{
   \item{x}{
-    score matrix for compounds (row) by several approarches (column)
+    score matrix for compounds (row) by several approaches (column)
   }
   \item{y}{
     activity label for compounds (0:inactive, 1:active)
@@ -23,7 +23,7 @@
 
 }
 \value{
-	call a plot
+	call plots
 }
 \references{
 

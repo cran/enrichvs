@@ -1,4 +1,7 @@
 matplot_enrichment_curve <- function(x, y) {
+  if ( dim(x)[1] != length(y) ){
+    stop(paste("The number of rows for score matrix must be equal to the number of labels."))
+  }
   ncol <- dim(x)[2]
   ### ideal & random ###
   plot( y, y, xlim=c(0, 100), ylim=c(0,100), type="n", las=1,

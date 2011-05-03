@@ -2,10 +2,10 @@
 \alias{bedroc}
 
 \title{
-	The Boltzmann-Enhanced Discrimination of ROC (BEDROC)
+	Function to culculate the Boltzmann-Enhanced Discrimination of ROC (BEDROC)
 }
 \description{
-	This program calculate BEDROC for virtual screening
+	Function to culculate the Boltzmann-Enhanced Discrimination of ROC (BEDROC)
 }
 \usage{
 	bedroc(x, y, decreasing=TRUE, alpha=20.0)
@@ -29,7 +29,7 @@
 
 }
 \value{
-	return a value, BEDROC
+	BEDROC, in the range from 0 to 1.
 }
 \references{
 	Truchon et al. Evaluating Virtual Screening Methods: Good and Bad Metrics for the "Early Recognition" Problem. J. Chem. Inf. Model. (2007) 47, 488-508.
@@ -50,5 +50,5 @@ y <- c(rep(1,50), rep(0,950))     # activity labels for "x"
 bedroc(x, y)
 
 data(dud_egfr)
-bedroc(dud_egfr[,1], dud_egfr[,2], decreasing=FALSE)
+bedroc(dud_egfr$energy, dud_egfr$label, decreasing=FALSE)
 }

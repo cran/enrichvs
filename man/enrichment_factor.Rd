@@ -2,10 +2,10 @@
 \alias{enrichment_factor}
 
 \title{
-	Enrichment factor calculation
+	Function to calculate the enrichment factor (EF)
 }
 \description{
-	This program calculate enrichment factors of virtual screening
+	Function to calculate the enrichment factor (EF)
 }
 \usage{
 	enrichment_factor(x, y, top=0.05, decreasing=TRUE)
@@ -29,7 +29,7 @@
 
 }
 \value{
-	a value, EF
+	EF, in the range from 0 to +Inf.
 }
 \references{
 
@@ -50,6 +50,6 @@ y <- c(rep(1,50), rep(0,950))     # activity labels for "x"
 enrichment_factor(x, y, top=0.1)
 
 data(dud_egfr)
-enrichment_factor(dud_egfr[,1], dud_egfr[,2], decreasing=FALSE)
+enrichment_factor(dud_egfr$energy, dud_egfr$label, decreasing=FALSE)
 
 }

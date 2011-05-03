@@ -2,10 +2,10 @@
 \alias{rie}
 
 \title{
-	Robust Initial Enhancement (RIE)
+	Function to culculate the Robust Initial Enhancement (RIE)
 }
 \description{
-	This program calculate RIE for virtual screening
+	Function to culculate the Robust Initial Enhancement (RIE)
 }
 \usage{
 	rie(x, y, decreasing=TRUE, alpha=20.0)
@@ -29,16 +29,21 @@
 
 }
 \value{
-	return a value, RIE
+	RIE, in the range from 0 to +Inf.
 }
 \references{
+	Sheridan RP et al. Protocols for bridging the peptide to nonpeptide gap in topological similarity searches. J. Chem. Inf. Comput. Sci. (2001) 41, 1395-1406.
+
 	Truchon et al. Evaluating Virtual Screening Methods: Good and Bad Metrics for the "Early Recognition" Problem. J. Chem. Inf. Model. (2007) 47, 488-508.
+
 }
 \author{
 	Hiroaki YABUUCHI
 }
 \note{
-
+	Though RIE was originally calculated through a Monte Carlo simulation, 
+	this function adopts a simplified formulation proposed by Truchon et al.
+	to reduce computational cost.
 }
 
 \seealso{
@@ -50,6 +55,6 @@ y <- c(rep(1,50), rep(0,950))     # activity labels for "x"
 rie(x, y)
 
 data(dud_egfr)
-rie(dud_egfr[,1], dud_egfr[,2], decreasing=FALSE)
+rie(dud_egfr$energy, dud_egfr$label, decreasing=FALSE)
 
 }
