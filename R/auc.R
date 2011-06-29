@@ -44,10 +44,3 @@ auc <- function(x, y, decreasing=TRUE, top=1.0) {
   area <- area + (fp - fp_prev) * (tp + tp_prev) / 2
   return( area/(n*(N-n)) )
 }
-
-
-#  m_rank <- which( y[ord] == 1 )
-#  auac <- 1 - sum( m_rank ) / n / N
-#  ra <- n / N
-#  ri <- (N - n) / N
-#  return( (auac / ri) - (ra / 2 / ri) )

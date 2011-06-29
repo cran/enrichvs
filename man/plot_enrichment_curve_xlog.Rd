@@ -8,8 +8,8 @@
 	Function to plot a enrichment curve with a logarithmic scale on the x axis
 }
 \usage{
-	plot_enrichment_curve_xlog(x, y, decreasing=TRUE, nplot=100, 
-		colbarwidth=1, colorize=FALSE, add=FALSE, col="black")
+	plot_enrichment_curve_xlog(x, y, decreasing=TRUE, npoint=100, 
+		colbarwidth=1, colorize=FALSE, add=FALSE, col="black", lwd=2)
 }
 
 \arguments{
@@ -22,8 +22,8 @@
   \item{decreasing}{
     TRUE if the compounds are ranked by decreasing score
   }
-  \item{nplot}{
-    the number of plots
+  \item{npoint}{
+    the number of points to plot the curve
   }
   \item{colbarwidth}{
     the width of color bar (only if colorize==TRUE)
@@ -36,6 +36,9 @@
   }
   \item{col}{
     color of the plot
+  }
+  \item{lwd}{
+    line width of the plot
   }
 }
 \details{
@@ -58,11 +61,13 @@
 
 }
 \examples{
-x <- rnorm(1000)    # random scores for 1000 compounds
-y <- c(rep(1,50), rep(0,950))     # activity labels for "x"
-plot_enrichment_curve_xlog(x, y)
-
 data(dud_egfr)
+x <- rnorm( 88888 )                        # virtual scores for 1000 compounds
+y <- c(rep(1,88), rep(0,88800))            # activity labels for "x"
+plot_enrichment_curve_xlog(x, y, col="blue")
+
 plot_enrichment_curve_xlog(dud_egfr$energy, dud_egfr$label, 
-	add=TRUE, decreasing=FALSE, col="red")
+	add=TRUE, decreasing=FALSE, col="red") # Add a plot
+legend("topleft", legend = c("ideal", "random", "score1", "score2"),
+	lty=c(2,3,1,1), col=c("black", "grey", "blue", "red"), bty="n")
 }

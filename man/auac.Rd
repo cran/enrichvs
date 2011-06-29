@@ -8,7 +8,7 @@
 	Function to calculate the Area Under the Accumulation Curve (AUAC).
 }
 \usage{
-	auac(x, y, decreasing=TRUE)
+	auac(x, y, decreasing=TRUE, top=1.0)
 }
 
 \arguments{
@@ -20,6 +20,9 @@
   }
   \item{decreasing}{
     TRUE if the compounds are ranked by decreasing score
+  }
+  \item{top}{
+    threshold ratio of the false positives (when ROC analysis is performed on a top list)
   }
 }
 \details{

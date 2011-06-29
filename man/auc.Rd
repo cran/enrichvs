@@ -2,10 +2,10 @@
 \alias{auc}
 
 \title{
-	Function to calculate calculate the Area Under the ROC Curve (AUC)
+	Function to calculate the Area Under the ROC Curve (AUC)
 }
 \description{
-	Function to calculate calculate the Area Under the ROC Curve (AUC)
+	Function to calculate the Area Under the ROC Curve (AUC)
 }
 \usage{
 	auc(x, y, decreasing=TRUE, top=1.0)

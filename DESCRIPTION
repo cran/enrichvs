@@ -1,6 +1,6 @@
 Package: enrichvs
-Version: 0.0.4
-Date: 2011-05-03
+Version: 0.0.5
+Date: 2011-06-29
 Title: Enrichment assessment of virtual screening approaches
 Author: Hiroaki YABUUCHI
 Maintainer: Hiroaki YABUUCHI <yabu.pharm@gmail.com>
@@ -11,4 +11,4 @@ Description: These programs are used for calculating enrichment
 License: BSD
 LazyLoad: yes
 Repository: CRAN
-Date/Publication: 2011-05-03 07:28:10
+Date/Publication: 2011-06-29 10:03:53
